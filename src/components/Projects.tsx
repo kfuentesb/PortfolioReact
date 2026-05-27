@@ -27,7 +27,7 @@ const projects = [
     },
 ]
 
-function Projects() {
+export default function Projects() {
     return (
         <section id="proyectos" style={{ background: '#0f0f0f', padding: '6rem 0' }}>
             <Container>
@@ -83,5 +83,3 @@ function Projects() {
         </section>
     )
 }
-
-export default Projects

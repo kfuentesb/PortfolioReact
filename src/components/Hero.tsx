@@ -1,65 +1,74 @@
 import { Container, Row, Col, Button } from 'react-bootstrap'
+import profilePic from '../assets/profile.jpg'
+import './hero-background.css' // Para animación de cartas
 
-function Hero() {
+const cardSymbols = [
+  { symbol: '♠', color: '#1a1a1a' },
+  { symbol: '♥', color: '#c0392b' },
+  { symbol: '♦', color: '#c0392b' },
+  { symbol: '♣', color: '#1a1a1a' },
+  { symbol: '♠', color: '#1a1a1a' },
+  { symbol: '♥', color: '#c0392b' },
+  { symbol: '♦', color: '#c0392b' },
+  { symbol: '♣', color: '#1a1a1a' },
+  { symbol: '♠', color: '#1a1a1a' },
+  { symbol: '♥', color: '#c0392b' },
+  { symbol: '♦', color: '#c0392b' },
+  { symbol: '♣', color: '#1a1a1a' },
+  { symbol: '♠', color: '#1a1a1a' },
+  { symbol: '♥', color: '#c0392b' },
+  { symbol: '♦', color: '#c0392b' },
+  { symbol: '♣', color: '#1a1a1a' },
+  { symbol: '♠', color: '#1a1a1a' },
+  { symbol: '♥', color: '#c0392b' },
+  { symbol: '♦', color: '#c0392b' },
+  { symbol: '♣', color: '#1a1a1a' },
+]
+
+export default function Hero() {
   return (
-    <section
-      style={{
-        minHeight: '100vh',
-        background: '#0a0a0a',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Container>
+    <section className="hero-section" id="home">
+      {/* Animación de fondo: símbolos de cartas abajo */}
+      <div className="cards-container">
+        {cardSymbols.map((card, i) => (
+          <span
+            key={i}
+            className="card-symbol"
+            style={{ color: card.color }}
+          >
+            {card.symbol}
+          </span>
+        ))}
+      </div>
+
+      {/* Contenido Header */}
+      <Container className="hero-content">
         <Row className="align-items-center">
-          <Col lg={7}>
-            <p style={{ color: '#6ee7b7', letterSpacing: '0.2em', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '1rem' }}>
-              Disponible para trabajar
-            </p>
-            <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 700, color: '#f5f5f0', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              Hola, soy <br />
-              <span style={{ color: '#6ee7b7' }}>Tu Nombre</span>
+          <Col md={8} className="text-center text-md-start">
+            <h1 className="display-6 fw-bold">
+              Hola. Soy <span style={{ color: '#3eafc9'}}>Kevin</span>✌️
             </h1>
-            <p style={{ fontSize: '1.15rem', color: '#9ca3af', maxWidth: '480px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-              Desarrollador frontend apasionado por crear interfaces bonitas y funcionales.
+            <h1 className="display-5 fw-bold">
+              <span style={{ color: '#d43f34' }}>Full Stack</span> Developer
+            </h1>
+            <p className="lead mt-4 mb-5 text-muted">
+              Me apasiona crear aplicaciones web modernas y eficientes utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
             </p>
-            <div className="d-flex gap-3 flex-wrap">
-              <Button
-                href="#proyectos"
-                style={{ background: '#6ee7b7', border: 'none', color: '#0a0a0a', fontWeight: 600, padding: '0.75rem 2rem', borderRadius: '4px' }}
-              >
-                Ver proyectos
-              </Button>
-              <Button
-                href="#contacto"
-                variant="outline-light"
-                style={{ padding: '0.75rem 2rem', borderRadius: '4px' }}
-              >
-                Contactar
-              </Button>
-            </div>
+            <Button variant="primary" size="lg" href="#proyectos">
+              Ver Proyectos
+            </Button>
           </Col>
-          <Col lg={5} className="d-none d-lg-flex justify-content-center mt-5 mt-lg-0">
-            <div style={{
-              width: 280, height: 280, borderRadius: '50%',
-              background: 'linear-gradient(135deg, #6ee7b7 0%, #3b82f6 100%)',
-              opacity: 0.15,
-              position: 'absolute',
-              filter: 'blur(60px)'
-            }} />
-            <div style={{
-              width: 240, height: 240, borderRadius: '50%',
-              border: '2px solid #6ee7b720',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '5rem'
-            }}>
-              👨‍💻
-            </div>
+          <Col md={4} className="text-center mt-4 mt-md-0">
+            <img
+              src={profilePic}
+              alt="Foto de perfil"
+              className="img-fluid rounded-circle"
+              // boxShadow sin boostrap para una sombra más intensa
+              style={{ maxWidth: '250px', boxShadow: '10px 10px 15px rgba(0,0,0,0.3)' }}
+            />
           </Col>
         </Row>
       </Container>
     </section>
   )
 }
-
-export default Hero

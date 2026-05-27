@@ -6,7 +6,7 @@ const skills = [
     { category: 'Herramientas', items: ['Git', 'Vite', 'Figma', 'VS Code'] },
 ]
 
-function About() {
+export default function About() {
     return (
         <section id="sobre-mí" style={{ background: '#0a0a0a', padding: '6rem 0' }}>
             <Container>
@@ -60,5 +60,3 @@ function About() {
         </section>
     )
 }
-
-export default About
