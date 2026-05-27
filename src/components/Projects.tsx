@@ -2,7 +2,7 @@ import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap'
 
 const projects = [
     {
-        title: 'E-commerce App',
+        title: 'Drone Gestory',
         description: 'Tienda online con carrito de compras, autenticación y pasarela de pago.',
         tags: ['React', 'Node.js', 'MongoDB'],
         demo: '#',
@@ -10,20 +10,12 @@ const projects = [
         emoji: '🛒',
     },
     {
-        title: 'Dashboard Analytics',
+        title: 'NextIndie',
         description: 'Panel de control con gráficas en tiempo real y gestión de usuarios.',
         tags: ['React', 'Chart.js', 'Firebase'],
         demo: '#',
         code: '#',
         emoji: '📊',
-    },
-    {
-        title: 'App del Tiempo',
-        description: 'Aplicación meteorológica con geolocalización y previsión a 7 días.',
-        tags: ['React', 'API REST', 'CSS'],
-        demo: '#',
-        code: '#',
-        emoji: '🌤️',
     },
 ]
 
