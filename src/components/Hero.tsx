@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
-import './hero-background.css' // Para animación de cartas
+import '../css/hero-background.css' // Animación de cartas
 
 const cardSymbols = [
   { symbol: '♠', color: '#1a1a1a' },
@@ -52,7 +52,7 @@ export default function Hero() {
               <span style={{ color: '#d43f34' }}>Full Stack</span> Developer
             </h1>
             <p className="lead mt-4 mb-5 text-muted">
-              Me apasiona crear aplicaciones web modernas y eficientes utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
+              Me apasiona crear aplicaciones web modernas utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
             </p>
             <Button variant="primary" size="lg" href="#proyectos">
               Ver Proyectos
@@ -60,7 +60,7 @@ export default function Hero() {
           </Col>
           <Col md={4} className="text-center mt-4 mt-md-0">
             <img
-              src={profilePic}
+              src={profilePic} // Sustituir por imagen de perfil
               alt="Foto de perfil"
               className="img-fluid rounded-circle"
               // boxShadow sin boostrap para una sombra más intensa
