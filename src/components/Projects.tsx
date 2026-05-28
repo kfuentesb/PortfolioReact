@@ -1,6 +1,7 @@
 import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap'
 
 const projects = [
+    // Lista de proyectos
     {
         title: 'NextIndie',
         description: 'Una plataforma de descubrimiento de juegos indies, con trailers, comunidad y calendario.',
@@ -11,8 +12,9 @@ const projects = [
     {
         title: 'Drone Gestory',
         description: 'Aplicación de gestión de flotas de drones para empresas.',
-        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
+        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker'], // He usado las mismas tecnologías
         emoji: <i className="bi bi-airplane-engines" style={{ color: '#3eafc9' }}></i>,
+        // Repo privado
     },
 ]
 

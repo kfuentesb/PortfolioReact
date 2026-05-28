@@ -8,7 +8,7 @@ const skills = [
 
 export default function About() {
     return (
-        <section id="sobre-mí" style={{ background: '#0a0a0a', padding: '6rem 0' }}>
+        <section id="sobre-mí" className="p-5" style={{ background: '#f8f9fa' }}>
             <Container>
                 <Row className="align-items-center g-5">
 
@@ -28,12 +28,11 @@ export default function About() {
                         <h2 className="fw-bold mb-4" style={{ fontSize: '2.2rem', color: '#f5f5f0' }}>
                             Sobre mí
                         </h2>
-                        <p style={{ color: '#9ca3af', lineHeight: 1.9 }} className="mb-3">
-                            Soy desarrollador web con X años de experiencia construyendo productos digitales.
-                            Me especializo en el frontend pero me manejo bien en toda la stack.
+                        <p className="text-white-50 mb-3">
+                            Soy desarrollador web recién graduado. Mi próxima meta será especalizarme en el desarollo de videojuegos.
                         </p>
-                        <p style={{ color: '#9ca3af', lineHeight: 1.9 }} className="mb-4">
-                            Cuando no estoy programando, me gusta el diseño, la música y explorar nuevas tecnologías.
+                        <p className="text-white-50 mb-4 lh-lg">
+                            Cuando no estoy programando, me gusta el deporte, los juegos y explorar nuevas tecnologías.
                         </p>
 
                         {skills.map(({ category, items }) => (
