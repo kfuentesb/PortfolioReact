@@ -1,9 +1,9 @@
-import { Container, Row, Col, Badge } from 'react-bootstrap'
+import { Container, Row, Col, Badge, Card } from 'react-bootstrap'
 
 const skills = [
     { category: 'Frontend', items: ['React', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'REST APIs'] },
-    { category: 'Herramientas', items: ['Git', 'Vite', 'Figma', 'VS Code'] },
+    { category: 'Backend', items: ['Node.js', 'Java', 'C#', 'REST APIs'] },
+    { category: 'Herramientas', items: ['Git', 'Spring Boot', 'Unity', 'VS Code'] },
 ]
 
 export default function About() {
@@ -12,7 +12,7 @@ export default function About() {
             <Container>
                 <Row className="align-items-center g-5">
 
-                    <Col lg={5} className="text-center">
+                    <Col md={4} className="text-center">
                         <div
                             className="rounded-circle mx-auto d-flex align-items-center justify-content-center"
                             style={{ width: 260, height: 260, background: '#1a1a1a', border: '2px solid #6ee7b730', fontSize: '6rem' }}
@@ -21,17 +21,14 @@ export default function About() {
                         </div>
                     </Col>
 
-                    <Col lg={7}>
-                        <p style={{ color: '#6ee7b7', letterSpacing: '0.2em', fontSize: '0.85rem' }} className="text-uppercase mb-2">
-                            Quién soy
-                        </p>
-                        <h2 className="fw-bold mb-4" style={{ fontSize: '2.2rem', color: '#f5f5f0' }}>
+                    <Col md={8}>
+                        <h2 className="text-uppercase fw-bold mb-4" style={{ color: '#3eafc9'}}>
                             Sobre mí
                         </h2>
-                        <p className="text-white-50 mb-3">
-                            Soy desarrollador web recién graduado. Mi próxima meta será especalizarme en el desarollo de videojuegos.
+                        <p className="mb-3 fw-bold fs-3 lead">
+                            Soy <span style={{color: '#d43f34'}}>desarrollador web</span> recién graduado. Mi próxima meta será especializarme en el desarollo de videojuegos.
                         </p>
-                        <p className="text-white-50 mb-4 lh-lg">
+                        <p className="mb-4 lh-lg lead">
                             Cuando no estoy programando, me gusta el deporte, los juegos y explorar nuevas tecnologías.
                         </p>
 
@@ -44,7 +41,7 @@ export default function About() {
                                     {items.map(skill => (
                                         <Badge
                                             key={skill}
-                                            style={{ background: '#1a1a1a', color: '#d1d5db', border: '1px solid #2a2a2a', fontWeight: 400, fontSize: '0.8rem', padding: '0.45em 0.9em' }}
+                                            bg="success"
                                         >
                                             {skill}
                                         </Badge>
