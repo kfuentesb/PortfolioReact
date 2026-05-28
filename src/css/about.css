@@ -1,0 +1,106 @@
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Skills */
+.hover-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Efecto de elevación e iluminación al hover */
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Animación sutil de escala y rotación en el icono */
+.hover-card .rounded-circle {
+    transition: transform 0.3s ease;
+}
+
+.hover-card:hover .rounded-circle {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Cambio suave de contraste en los badges */
+.hover-card .badge {
+    transition: filter 0.2s ease;
+}
+
+.hover-card:hover .badge {
+    filter: brightness(0.95);
+}
+
+/* Stat cards */
+.stat-card {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+    will-change: transform, box-shadow;
+    cursor: default;
+}
+
+/* Efecto de flotado y relieve al pasar el cursor */
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Hago pulse */
+.stat-card:hover i {
+    animation: pulse 1.6s infinite ease-in-out;
+}
+
+/* Se agranda texto al hover del span */
+.stat-card span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover span {
+    transform: scale(1.05);
+}
+
+/* Profile Sombra giratoria al hacer hover*/
+.profile-avatar {
+    /* Sombra base oscura*/
+    box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al hacer hover, activamos la animación de la sombra y escalamos */
+.profile-avatar:hover {
+    transform: scale(1.02);
+    /* Animación infinita y lineal */
+    animation: rotateNeonShadow 3s infinite linear;
+}
+
+/* Animación que hace rotar la sombra de luces en círculo */
+@keyframes rotateNeonShadow {
+0% {
+        box-shadow: -10px 10px 22px rgba(168, 85, 247, 0.7); /* Morado base */
+    }
+    25% {
+        box-shadow: 10px 10px 22px rgba(236, 72, 153, 0.7); /* Magenta */
+    }
+    50% {
+        box-shadow: 10px -10px 22px rgba(192, 132, 252, 0.8); /* Violeta más brillante que 0%*/
+    }
+    75% {
+        box-shadow: -10px -10px 22px rgba(236, 72, 153, 0.7); /* Magenta */
+    }
+    100% {
+        box-shadow: -10px 10px 22px rgba(168, 85, 247, 0.7); /* Comienzo */
+    }
+}

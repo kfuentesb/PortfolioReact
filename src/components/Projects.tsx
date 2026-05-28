@@ -5,7 +5,7 @@ const projects = [
     {
         title: 'NextIndie',
         description: 'Una plataforma de descubrimiento de juegos indies, con trailers, comunidad y calendario.',
-        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
+        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'REST APIs'],
         emoji: <i className="bi bi-controller" style={{ color: '#3eafc9' }}></i>,
         github: 'https://github.com/kfuentesb/nextindie'
     },
