@@ -2,69 +2,67 @@ import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap'
 
 const projects = [
     {
-        title: 'Drone Gestory',
-        description: 'Tienda online con carrito de compras, autenticación y pasarela de pago.',
-        tags: ['React', 'Node.js', 'MongoDB'],
-        demo: '#',
-        code: '#',
-        emoji: '🛒',
+        title: 'NextIndie',
+        description: 'Una plataforma de descubrimiento de juegos indies, con trailers, comunidad y calendario.',
+        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
+        emoji: <i className="bi bi-controller" style={{ color: '#3eafc9' }}></i>,
+        github: 'https://github.com/kfuentesb/nextindie'
     },
     {
-        title: 'NextIndie',
-        description: 'Panel de control con gráficas en tiempo real y gestión de usuarios.',
-        tags: ['React', 'Chart.js', 'Firebase'],
-        demo: '#',
-        code: '#',
-        emoji: '📊',
+        title: 'Drone Gestory',
+        description: 'Aplicación de gestión de flotas de drones para empresas.',
+        tags: ['React', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
+        emoji: <i className="bi bi-airplane-engines" style={{ color: '#3eafc9' }}></i>,
     },
 ]
 
 export default function Projects() {
     return (
-        <section id="proyectos" style={{ background: '#0f0f0f', padding: '6rem 0' }}>
+        <section className="p-5 bg-dark bg-opacity-90" id="proyectos">
             <Container>
                 <div className="mb-5">
-                    <p style={{ color: '#6ee7b7', letterSpacing: '0.2em', fontSize: '0.85rem', textTransform: 'uppercase' }}>
-                        Mi trabajo
-                    </p>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#f5f5f0' }}>Proyectos</h2>
+                    <h2 className="display-5 fw-bold text-light">Mis Proyectos</h2>
                 </div>
 
                 <Row className="g-4">
                     {projects.map((project) => (
                         <Col md={4} key={project.title}>
-                            <Card style={{
-                                background: '#1a1a1a',
+                            <Card className="h-100 rounded-2 border-4" style={{
+                                background: '#1a1a1a', // Tonalidad diferente a bg-dark para que se note
                                 border: '1px solid #2a2a2a',
-                                borderRadius: '12px',
                                 height: '100%',
+                                // Para que la transition de border se viese tuve que cambiarlo de boostrap a css inline.
                                 transition: 'border-color 0.2s',
                             }}
-                                  onMouseEnter={e => e.currentTarget.style.borderColor = '#6ee7b740'}
-                                  onMouseLeave={e => e.currentTarget.style.borderColor = '#2a2a2a'}
+                                onMouseEnter={e => e.currentTarget.style.borderColor = '#f8f9fa'}
+                                onMouseLeave={e => e.currentTarget.style.borderColor = '#2a2a2a'}
                             >
                                 <Card.Body className="p-4 d-flex flex-column">
-                                    <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{project.emoji}</div>
-                                    <Card.Title style={{ color: '#f5f5f0', fontWeight: 600, fontSize: '1.1rem' }}>
+                                    <div className="display-4">{project.emoji}</div>
+                                    <Card.Title className="text-white fw-semibold fs-6 mt-2">
                                         {project.title}
                                     </Card.Title>
-                                    <Card.Text style={{ color: '#9ca3af', fontSize: '0.9rem', lineHeight: 1.7, flexGrow: 1 }}>
+                                    <Card.Text className="text-white-50 small lh-base flex-grow-1">
                                         {project.description}
                                     </Card.Text>
                                     <div className="d-flex flex-wrap gap-2 my-3">
                                         {project.tags.map(tag => (
-                                            <Badge key={tag} style={{ background: '#6ee7b715', color: '#6ee7b7', fontWeight: 400, fontSize: '0.75rem', padding: '0.4em 0.8em' }}>
+                                            <Badge bg="success" key={tag}>
                                                 {tag}
                                             </Badge>
                                         ))}
                                     </div>
-                                    <div className="d-flex gap-2 mt-auto">
-                                        <Button href={project.demo} size="sm" style={{ background: '#6ee7b7', border: 'none', color: '#0a0a0a', fontWeight: 600, borderRadius: '4px' }}>
-                                            Demo
-                                        </Button>
-                                        <Button href={project.code} size="sm" variant="outline" style={{ border: '1px solid #3a3a3a', color: '#9ca3af', borderRadius: '4px' }}>
-                                            Código
-                                        </Button>
+                                    <div>
+                                        {project.github ? (
+                                            <Button variant="outline-info" size="sm" href={project.github} target="_blank">
+                                                Ver en Github
+                                            </Button>
+                                        ):(
+                                            <Badge bg="danger">
+                                                <i className="bi bi-lock-fill me-1"></i> Repositorio privado
+                                            </Badge>
+                                        )}
+                                        
                                     </div>
                                 </Card.Body>
                             </Card>
