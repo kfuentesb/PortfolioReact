@@ -1,0 +1,9 @@
+/* Experience cards */
+.experience-card {
+	border-left: 5px solid #d43f34;
+	transition: border-color 0.2s ease;
+}
+
+.experience-card:hover {
+	border-left-color: #3eafc9;
+}

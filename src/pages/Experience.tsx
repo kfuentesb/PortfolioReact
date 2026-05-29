@@ -1,5 +1,4 @@
 import { Container, Row, Col, Card, Badge, Nav } from 'react-bootstrap'
-import { Link } from 'react-router-dom' // 1. IMPORTANTE: Añadida la importación para las rutas
 import "../css/experience.css"  
 
 const experiences = [
@@ -25,12 +24,12 @@ export default function Experience() {
             <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
                 <Nav className="bg-white bg-opacity-75 backdrop-blur px-4 py-2 rounded-pill shadow-sm border border-light">
                     <Nav.Item>
-                        <Nav.Link as={Link} to="/" className="fw-semibold px-3 text-dark hover-nav-link">
+                        <Nav.Link href="/" className="fw-semibold px-3 text-dark hover-nav-link">
                             Portada
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to="/experiencia" className="fw-semibold px-3 text-secondary hover-nav-link">
+                        <Nav.Link href="/experiencia" className="fw-semibold px-3 text-secondary hover-nav-link">
                             Experiencia
                         </Nav.Link>
                     </Nav.Item>
@@ -51,19 +50,7 @@ export default function Experience() {
                     {experiences.map((exp, index) => (
                         <Col key={index} className="w-100">
                             <Card 
-                                className="border-0 shadow-sm hover-card" 
-                                style={{ 
-                                    borderLeft: '5px solid #d43f34', 
-                                    transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-                                }}
-                                onMouseEnter={e => {
-                                    e.currentTarget.style.transform = 'translateY(-3px)';
-                                    e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.08)';
-                                }}
-                                onMouseLeave={e => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 .125rem .25rem rgba(0,0,0,0.075)';
-                                }}
+                                className="border-0 shadow-sm hover-card experience-card"
                             >
                                 <Card.Body className="p-4">
                                     <Row className="align-items-start">

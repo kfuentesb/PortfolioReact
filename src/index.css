@@ -1,5 +1,69 @@
+:root {
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-dark: #1a1a1a;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-primary: #3eafc9;
+  --color-secondary: #d43f34;
+  --color-success: #22e094;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hover-nav-link {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hover-nav-link:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-1px);
+}
+
+.hover-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

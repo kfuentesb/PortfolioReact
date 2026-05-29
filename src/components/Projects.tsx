@@ -1,4 +1,5 @@
 import { Container, Row, Col, Card, Badge, Button } from 'react-bootstrap'
+import "../css/projects.css"
 
 const projects = [
     // Lista de proyectos
@@ -29,16 +30,7 @@ export default function Projects() {
                 <Row className="g-4">
                     {projects.map((project) => (
                         <Col md={4} key={project.title}>
-                            <Card className="h-100 rounded-2 border-4" style={{
-                                background: '#1a1a1a', // Tonalidad diferente a bg-dark para que se note
-                                border: '1px solid #2a2a2a',
-                                height: '100%',
-                                // Para que la transition de border se viese tuve que cambiarlo de boostrap a css inline.
-                                transition: 'border-color 0.2s',
-                            }}
-                                onMouseEnter={e => e.currentTarget.style.borderColor = '#f8f9fa'}
-                                onMouseLeave={e => e.currentTarget.style.borderColor = '#2a2a2a'}
-                            >
+                            <Card className="h-100 rounded-2 border-4 hover-card project-card">
                                 <Card.Body className="p-4 d-flex flex-column">
                                     <div className="display-4">{project.emoji}</div>
                                     <Card.Title className="text-white fw-semibold fs-6 mt-2">

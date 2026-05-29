@@ -1,29 +1,4 @@
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.15);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 /* Skills */
-.hover-card {
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.3s ease, 
-                border-color 0.3s ease;
-    will-change: transform, box-shadow;
-}
-
-/* Efecto de elevación e iluminación al hover */
-.hover-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 20px rgba(0,0,0,0.1) !important;
-}
-
 /* Animación sutil de escala y rotación en el icono */
 .hover-card .rounded-circle {
     transition: transform 0.3s ease;

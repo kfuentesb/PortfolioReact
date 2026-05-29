@@ -61,9 +61,8 @@ export default function About() {
                             {skills.map(({ category, icon, items, color }) => (
                                 <Col md={4} key={category}>
                                     <Card 
-                                        className="h-100 border-0 shadow-sm hover-card"
+                                            className="h-100 border-0 shadow-sm hover-card"
                                         style={{ 
-                                            transition: 'all 0.3s ease',
                                             borderTop: `4px solid ${color} !important`
                                         }}
                                     >
