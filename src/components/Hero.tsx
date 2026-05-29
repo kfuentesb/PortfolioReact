@@ -2,7 +2,7 @@ import { Container, Row, Col, Button, Nav } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
 import '../css/hero-background.css' // Animación de cartas
 
-const cardSymbols = [ // Simbolos para hacer la animación de fondo con cartas. Está hecha con IA pero quedó bonita.
+const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en las prácticas, y queda bonita
   { symbol: '♠', color: '#1a1a1a' },
   { symbol: '♥', color: '#c0392b' },
   { symbol: '♦', color: '#c0392b' },

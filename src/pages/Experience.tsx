@@ -26,7 +26,7 @@ export default function Experience() {
     return (
         <section className="p-5 position-relative" id="experiencia" style={{ background: '#f8f9fa', minHeight: '100vh' }}>
             
-            {/* Navbar minimalista */}
+            {/* Navbar */}
             <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
                 <Nav className="floating-nav">
                     <Nav.Item>
