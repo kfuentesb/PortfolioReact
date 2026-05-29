@@ -1,5 +1,5 @@
 /* Skills */
-/* Animación sutil de escala y rotación en el icono */
+/* Icono animacion escala y rotación sutil */
 .hover-card .rounded-circle {
     transition: transform 0.3s ease;
 }

@@ -43,7 +43,7 @@ export default function Hero() {
       
       {/* Navbar minimalista */}
       <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
-        <Nav className="bg-white bg-opacity-75 backdrop-blur px-4 py-2 rounded-pill shadow-sm border border-light">
+        <Nav className="floating-nav">
           <Nav.Item>
             <Nav.Link href="/" className="fw-semibold px-3 text-dark hover-nav-link">
               Portada

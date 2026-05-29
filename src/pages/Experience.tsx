@@ -22,7 +22,7 @@ export default function Experience() {
             
             {/* Navbar minimalista */}
             <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
-                <Nav className="bg-white bg-opacity-75 backdrop-blur px-4 py-2 rounded-pill shadow-sm border border-light">
+                <Nav className="floating-nav">
                     <Nav.Item>
                         <Nav.Link href="/" className="fw-semibold px-3 text-dark hover-nav-link">
                             Portada
@@ -38,14 +38,14 @@ export default function Experience() {
 
             <Container style={{ maxWidth: '800px' }}> 
                 
-                {/* TÍTULO PRINCIPAL - Ajustado con pt-5 y mt-5 para evitar solapamientos */}
+                {/* Título */}
                 <div className="mb-5 pt-5 mt-5 text-center text-md-start">
                     <h2 className="display-5 fw-bold text-uppercase" style={{ color: '#3eafc9' }}>
                         Mi Experiencia laboral
                     </h2>
                 </div>
 
-                {/* LISTA DE EXPERIENCIAS EN VERTICAL */}
+                {/* Lista de experiencias laborales ampliable mediante la const */}
                 <Row className="flex-column g-4">
                     {experiences.map((exp, index) => (
                         <Col key={index} className="w-100">
