@@ -1,4 +1,4 @@
-import Router from './components/Router'
+import Router from './router/Router'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {

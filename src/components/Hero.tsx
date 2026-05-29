@@ -26,6 +26,7 @@ const cardSymbols = [ // Simbolos para hacer la animación de fondo con cartas. 
 ]
 
 export default function Hero() {
+
   return (
     <section className="hero-section" id="home">
       {/* Animación de fondo: símbolos de cartas abajo */}
