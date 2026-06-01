@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'; 
 
-// CLASE EXTRAIDA DEL PROYECTO DE PRÁCTICAS. La hizo Andrés, en su momento.
+// CLASE EXTRAIDA DEL PROYECTO DE PRÁCTICAS. La hizo Andrés en su momento.
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
