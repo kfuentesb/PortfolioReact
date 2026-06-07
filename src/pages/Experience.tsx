@@ -1,4 +1,5 @@
-import { Container, Row, Col, Card, Badge, Nav } from 'react-bootstrap'
+import { Container, Row, Col, Card, Badge } from 'react-bootstrap'
+import Navbar from '../components/Navbar'
 import "../css/experience.css"  
 
 const experiences = [
@@ -27,20 +28,7 @@ export default function Experience() {
         <section className="p-5 position-relative" id="experiencia" style={{ background: '#f8f9fa', minHeight: '100vh' }}>
             
             {/* Navbar */}
-            <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
-                <Nav className="floating-nav">
-                    <Nav.Item>
-                        <Nav.Link href="/" className="fw-semibold px-3 text-dark hover-nav-link">
-                            Portada
-                        </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/experiencia" className="fw-semibold px-3 text-secondary hover-nav-link">
-                            Experiencia
-                        </Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </div>
+            <Navbar/>
 
             <Container style={{ maxWidth: '800px' }}> 
                 
