@@ -1,8 +1,10 @@
-import { Container, Row, Col, Button, ButtonGroup } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
-import '../css/hero-background.css' // Animación de cartas
+import '../css/hero-background.css'
 
-const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en las prácticas, y queda bonita
+// Array base fuera del componente (se usa para inicializar el estado)
+const initialCardSymbols = [
   { symbol: '♠', color: '#1a1a1a' },
   { symbol: '♥', color: '#c0392b' },
   { symbol: '♦', color: '#c0392b' },
@@ -25,7 +27,26 @@ const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en 
   { symbol: '♣', color: '#1a1a1a' },
 ]
 
+// Función auxiliar: Fisher-Yates shuffle
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
 export default function Hero() {
+  const [cardSymbols, setCardSymbols] = useState(initialCardSymbols)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCardSymbols(prev => shuffleArray(prev))
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section className="hero-section" id="home">
@@ -33,7 +54,7 @@ export default function Hero() {
       <div className="cards-container">
         {cardSymbols.map((card, i) => (
           <span
-            key={i}
+            key={`${card.symbol}-${i}`}
             className="card-symbol"
             style={{ color: card.color }}
           >
@@ -55,21 +76,15 @@ export default function Hero() {
             <p className="lead mt-4 mb-5 text-muted">
               Me apasiona crear aplicaciones web modernas utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
             </p>
-            <ButtonGroup>
-              <Button variant="primary" size="lg" href="#proyectos">
-                Ver Proyectos
-              </Button>
-              <Button variant="outline-primary" size="lg" href="#sobre-mí">
-                Sobre mí
-              </Button>
-            </ButtonGroup>
+            <Button variant="primary" size="lg" href="#proyectos">
+              Ver Proyectos
+            </Button>
           </Col>
           <Col md={4} className="text-center mt-4 mt-md-0">
             <img
-              src={profilePic} // Sustituir por imagen de perfil
+              src={profilePic}
               alt="Foto de perfil"
               className="img-fluid rounded-circle"
-              // boxShadow sin boostrap para una sombra más intensa
               style={{ maxWidth: '350px', boxShadow: '10px 10px 15px rgba(0,0,0,0.4)' }}
             />
           </Col>
