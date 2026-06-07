@@ -1,5 +1,5 @@
 import { Nav } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Navbar() {
   const [activePath, setActivePath] = useState(() => {
