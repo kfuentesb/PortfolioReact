@@ -1,4 +1,4 @@
-import { Container, Row, Col, Badge, Card } from 'react-bootstrap'
+import { Container, Row, Col, Badge, Card, Image } from 'react-bootstrap'
 import "../css/about.css"
 import profilePic from '../assets/profile2.jpg'
 
@@ -34,10 +34,13 @@ export default function About() {
                             className="rounded-circle mx-auto d-flex align-items-center justify-content-center border border-3 border-dark"
                             style={{ maxWidth: '320px', maxHeight: '320px' }}
                         >
-                            <img 
-                                src={profilePic} 
-                                alt="Foto de Perfil" 
-                                className="img-fluid rounded-circle profile-avatar" 
+                            <Image
+                                src={profilePic}
+                                alt="Foto de Perfil"
+                                fluid
+                                thumbnail
+                                roundedCircle
+                                className="profile-avatar"
                             />
                         </div>
                     </Col>
@@ -99,22 +102,22 @@ export default function About() {
                             ))}
                         </Row>
                         {/* Datos adicionales */}
-                        <Row className="mt-4 g-3">
-                        <Col xs={6} md={4}>
+                        <Row className="mt-4 g-3 flex-nowrap overflow-auto pb-2">
+                        <Col xs="auto" md={4}>
                             <div className="text-center p-3 rounded-3 stat-card" style={{ background: 'rgba(60, 181, 208, 0.1)' }}>
                                 <i className="bi bi-calendar-check fs-2 mb-2 d-block" style={{ color: '#3eafc9' }}></i>
                                 <span className="fw-bold fs-5 text-dark">2026</span>
                                 <small className="d-block text-muted">Graduación</small>
                             </div>
                         </Col>
-                        <Col xs={6} md={4}>
+                        <Col xs="auto" md={4}>
                             <div className="text-center p-3 rounded-3 stat-card" style={{ background: 'rgba(110, 231, 183, 0.1)' }}>
                                 <i className="bi bi-joystick fs-2 mb-2 d-block" style={{ color: '#6ee7b7' }}></i>
                                 <span className="fw-bold fs-5 text-dark">Unity</span>
                                 <small className="d-block text-muted">Certificado</small>
                             </div>
                         </Col>
-                        <Col xs={12} md={4}>
+                        <Col xs="auto" md={4}>
                             <div className="text-center p-3 rounded-3 stat-card" style={{ background: 'rgba(195, 110, 231, 0.1)' }}>
                                 <i className="bi bi-car-front-fill fs-2 mb-2 d-block" style={{ color: '#e36ee7' }}></i>
                                 <span className="fw-bold fs-5 text-dark">Vehículo Propio</span>

@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Badge } from 'react-bootstrap'
+import { Container, Row, Col, Card, Badge, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import "../css/experience.css"  
 
 const experiences = [
@@ -33,9 +33,19 @@ export default function Experience() {
                     <h2 className="display-5 fw-bold text-uppercase" style={{ color: '#3eafc9' }}>
                         Mi Experiencia laboral
                     </h2>
-                    <Badge bg="dark" pill className="mt-3 px-3 py-2 fw-semibold">
-                        Tiempo Total Laboral: {totalWorkLabel}
-                    </Badge>
+                    <OverlayTrigger
+                        placement="bottom"
+                        overlay={
+                            <Tooltip id="tooltip-total-work">
+                                Tiempo total trabajado en el sector tecnológico.
+                            </Tooltip>
+                        }
+                    >
+                        <Badge bg="info" pill className="mt-3 px-3 py-2 fw-semibold">
+                            Tiempo Total Laboral: {totalWorkLabel}
+                        </Badge>
+                    </OverlayTrigger>
+                    
                 </div>
 
                 {/* Lista de experiencias laborales ampliable mediante la const */}

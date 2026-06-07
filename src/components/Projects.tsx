@@ -29,7 +29,7 @@ export default function Projects() {
 
                 <Row className="g-4">
                     {projects.map((project) => (
-                        <Col md={4} key={project.title}>
+                        <Col sm={12} md={6} lg={4} key={project.title}>
                             <Card className="h-100 rounded-2 border-4 hover-card project-card">
                                 <Card.Body className="p-4 d-flex flex-column">
                                     <div className="display-4">{project.emoji}</div>
@@ -41,7 +41,7 @@ export default function Projects() {
                                     </Card.Text>
                                     <div className="d-flex flex-wrap gap-2 my-3">
                                         {project.tags.map(tag => (
-                                            <Badge bg="success" key={tag}>
+                                            <Badge className="text-dark text-uppercase" bg="primary" key={tag}>
                                                 {tag}
                                             </Badge>
                                         ))}

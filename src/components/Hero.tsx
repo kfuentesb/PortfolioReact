@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, ButtonGroup } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
 import '../css/hero-background.css' // Animación de cartas
 
@@ -55,9 +55,14 @@ export default function Hero() {
             <p className="lead mt-4 mb-5 text-muted">
               Me apasiona crear aplicaciones web modernas utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
             </p>
-            <Button variant="primary" size="lg" href="#proyectos">
-              Ver Proyectos
-            </Button>
+            <ButtonGroup>
+              <Button variant="primary" size="lg" href="#proyectos">
+                Ver Proyectos
+              </Button>
+              <Button variant="outline-primary" size="lg" href="#sobre-mí">
+                Sobre mí
+              </Button>
+            </ButtonGroup>
           </Col>
           <Col md={4} className="text-center mt-4 mt-md-0">
             <img
