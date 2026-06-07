@@ -1,6 +1,5 @@
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
-import Navbar from './Navbar'
 import '../css/hero-background.css' // Animación de cartas
 
 const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en las prácticas, y queda bonita
@@ -42,9 +41,6 @@ export default function Hero() {
           </span>
         ))}
       </div>
-      
-      {/* Navbar minimalista */}
-      <Navbar />
 
       {/* Contenido Header */}
       <Container className="hero-content">
