@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://kfuentesb.github.io/PortfolioReact",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "boostrap": "^2.0.0",
@@ -17,7 +20,7 @@
     "react": "^19.2.6",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.16.0"
+    "react-router-dom": "^7.18.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -28,6 +31,7 @@
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "gh-pages": "^6.3.0",
     "globals": "^17.6.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",

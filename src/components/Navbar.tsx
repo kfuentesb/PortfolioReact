@@ -1,5 +1,5 @@
 import { Nav, Navbar as BsNavbar, Container } from 'react-bootstrap'
-import { useLocation, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'  // ← Eliminado useLocation
 
 const navLinks = [
   { path: '/', label: 'Portada', icon: 'bi-house' },
@@ -8,7 +8,7 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const location = useLocation()
+  // ← Eliminada la línea: const location = useLocation()
 
   return (
     <BsNavbar expand="md" className="position-fixed w-100 top-0" style={{ zIndex: 1030 }}>
