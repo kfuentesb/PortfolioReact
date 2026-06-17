@@ -1,34 +1,44 @@
-import { Nav } from 'react-bootstrap'
-import { useState } from 'react'
+import { Nav, Navbar as BsNavbar, Container } from 'react-bootstrap'
+import { useLocation, NavLink } from 'react-router-dom'
+
+const navLinks = [
+  { path: '/', label: 'Portada', icon: 'bi-house' },
+  { path: '/experiencia', label: 'Experiencia', icon: 'bi-briefcase' },
+  { path: '/contacto', label: 'Contacto', icon: 'bi-envelope' },
+]
 
 export default function Navbar() {
-  const [activePath, setActivePath] = useState(() => {
-    return typeof window !== 'undefined' ? window.location.pathname : '/';
-  });
-
-  const getNavLinkClass = (path: string) => {
-    const baseClasses = 'fw-semibold px-3 hover-nav-link';
-    return activePath === path
-      ? `${baseClasses} text-dark`
-      : `${baseClasses} text-secondary`;
-  }
+  const location = useLocation()
 
   return (
-    <div>
-      <div className="position-absolute top-0 start-50 translate-middle-x mt-4" style={{ zIndex: 10 }}>
-        <Nav className="floating-nav">
-          <Nav.Item>
-            <Nav.Link href="/" onClick={() => setActivePath('/')} className={getNavLinkClass('/')}>
-              Portada
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/experiencia" onClick={() => setActivePath('/experiencia')} className={getNavLinkClass('/experiencia')}>
-              Experiencia
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </div>  
-    </div>
+    <BsNavbar expand="md" className="position-fixed w-100 top-0" style={{ zIndex: 1030 }}>
+      <Container className="justify-content-center">
+        <div className="floating-nav d-flex align-items-center">
+          <BsNavbar.Toggle aria-controls="navbar-nav" className="border-0 shadow-none me-2" />
+          <BsNavbar.Collapse id="navbar-nav">
+            <Nav className="align-items-center">
+              {navLinks.map((link) => (
+                <Nav.Item key={link.path}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `fw-semibold px-3 py-2 rounded-pill text-decoration-none d-flex align-items-center ${ 
+                        isActive 
+                          ? 'text-dark bg-white shadow-sm' 
+                          : 'text-secondary hover-nav-link'
+                      }`
+                    }
+                    end
+                  >
+                    <i className={`bi ${link.icon} me-2`}></i>
+                    {link.label}
+                  </NavLink>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </BsNavbar.Collapse>
+        </div>
+      </Container>
+    </BsNavbar>
   )
 }

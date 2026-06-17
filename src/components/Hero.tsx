@@ -1,8 +1,8 @@
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import profilePic from '../assets/profile.jpg'
-import '../css/hero-background.css' // Animación de cartas
+import '../css/hero-background.css'
 
-const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en las prácticas, y queda bonita
+const cardSymbols = [
   { symbol: '♠', color: '#1a1a1a' },
   { symbol: '♥', color: '#c0392b' },
   { symbol: '♦', color: '#c0392b' },
@@ -26,23 +26,16 @@ const cardSymbols = [ // Esta animación la hicimos probando cosas con la IA en 
 ]
 
 export default function Hero() {
-
   return (
     <section className="hero-section" id="home">
-      {/* Animación de fondo: símbolos de cartas abajo */}
       <div className="cards-container">
         {cardSymbols.map((card, i) => (
-          <span
-            key={i}
-            className="card-symbol"
-            style={{ color: card.color }}
-          >
+          <span key={i} className="card-symbol" style={{ color: card.color }}>
             {card.symbol}
           </span>
         ))}
       </div>
 
-      {/* Contenido Header */}
       <Container className="hero-content">
         <Row className="align-items-center">
           <Col md={8} className="text-center text-md-start">
@@ -55,16 +48,17 @@ export default function Hero() {
             <p className="lead mt-4 mb-5 text-muted">
               Me apasiona crear aplicaciones web modernas utilizando React y Bootstrap. Siempre estoy buscando nuevos desafíos para seguir creciendo como desarrollador.
             </p>
-            <Button variant="primary" size="lg" href="#proyectos">
-              Ver Proyectos
-            </Button>
+            <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+              <Button variant="primary" size="lg" href="#proyectos">
+                Ver Proyectos
+              </Button>
+            </div>
           </Col>
           <Col md={4} className="text-center mt-4 mt-md-0">
             <img
-              src={profilePic} // Sustituir por imagen de perfil
+              src={profilePic}
               alt="Foto de perfil"
               className="img-fluid rounded-circle"
-              // boxShadow sin boostrap para una sombra más intensa
               style={{ maxWidth: '350px', boxShadow: '10px 10px 15px rgba(0,0,0,0.4)' }}
             />
           </Col>
